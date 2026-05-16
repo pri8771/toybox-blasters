@@ -1,5 +1,49 @@
 # Implementation Log — ToyBox Blasters
 
+## 2026-05-16 — Task 010 Master Documentation System (Phase 1 capstone)
+
+**Task:** Phase 1 — Task 010 Create Master Documentation System (+ review/hardening pass)
+
+**What changed:**
+- Added `PROJECT_DOCS/README.md` master index (all docs, owner, task ID, last updated).
+- Added / consolidated: `ECONOMY_DESIGN.md`, `ECONOMY_PHILOSOPHY.md` (alias), `MONETIZATION_STRATEGY.md`, `ART_BIBLE.md`, `TECHNICAL_ARCHITECTURE.md`, `ANALYTICS_SPEC.md`, `CHANGELOG.md`, `RELEASE_CHECKLIST.md`, `BUG_TRACKER.md`.
+- Expanded root `README.md` (quick start, Unity version, menus, phase status).
+- Cross-linked `PRD.md`, `TECH_DESIGN.md`, `GAMEPLAY_DESIGN.md`, `CORE_GAMEPLAY_LOOP.md`, `ART_DIRECTION.md`.
+- Formalized `OPEN_BUGS.md` template; workflow in `BUG_TRACKER.md`.
+- Code: `DocumentationManifestConfig`, `DocumentationManifestDefaults`, `DocumentationManifestValidator`, Editor menus (validate + create stubs).
+- Updated `FEATURE_BACKLOG.md` (Phase 1 complete), `TECH_DECISIONS.md` TD-019, `000_MASTER_CURSOR_INSTRUCTIONS.md`.
+
+**How to test:**
+1. **ToyBox Blasters → Documentation → Create Documentation Manifest Config**
+2. **ToyBox Blasters → Documentation → Validate Documentation System** — expect pass
+3. Confirm **Validate Game Concept** still works
+
+**Review:** Subtasks 1–10 **Pass** (see Task 010 review in agent report).
+
+**Next:** **Phase 2 — First playable prototype** per `RELEASE_SCOPE.md` §9.
+
+---
+
+## 2026-05-16 — Task 006 Game Economy Philosophy
+
+**Task:** Phase 1 — Task 006 Define Game Economy Philosophy (+ review/hardening)
+
+**What changed:**
+- `PROJECT_DOCS/ECONOMY_PHILOSOPHY.md` — coins/gems/Bedroom Tokens, sources/sinks tables, ads, IAP ladder, anti-inflation (TBD tuning).
+- `EconomyPhilosophyConfig` stack + `IEconomyPhilosophyProvider` stub; Editor create/reset/validate + silent load validation.
+- Cross-links: `GAMEPLAY_DESIGN.md`, `CORE_GAMEPLAY_LOOP.md`, `PRD.md`; `TECH_DECISIONS.md` TD-010.
+
+**How to test:**
+1. **ToyBox Blasters → Product → Create Economy Philosophy Config**
+2. **ToyBox Blasters → Validate Economy Philosophy** — pass
+3. Optional: `EconomyPhilosophyBootstrap` in Play Mode — Console summary
+
+**Review:** Subtasks 1–10 **Pass**. MVP coins-only gameplay noted; gems/event doc-only until soft launch+.
+
+**Next:** Phase 2 wallet (coins) or Task 013 folder structure per backlog.
+
+---
+
 ## 2026-05-16 — Task 008 Define Art Direction
 
 **Task:** Phase 1 — Task 008 Define Art Direction (+ review/hardening)
@@ -42,7 +86,7 @@
 3. Confirm `Library/` not tracked: `git status` (no Library paths).
 4. Follow `GITHUB_SETUP.md` to create remote when `gh auth` is ready.
 
-**Review:** Subtasks 1–10 **Pass** (remote create documented; `gh repo create` not run unless authenticated).
+**Review:** Subtasks 1–10 **Pass**. Remote: https://github.com/pri8771/toybox-blasters (`main` + `dev` pushed via `gh repo create`).
 
 **Next:** Task 013 — folder structure (Phase 2).
 

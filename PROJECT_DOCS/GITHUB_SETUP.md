@@ -2,13 +2,13 @@
 
 **Task 012** — Phase 2 repository scaffolding. Remote creation is optional; local git + docs are the source of truth until you push.
 
-## Placeholder remote
+## Remote
 
 ```
-https://github.com/YOUR_ORG/toybox-blasters
+https://github.com/pri8771/toybox-blasters
 ```
 
-Replace `YOUR_ORG` with your GitHub user or organization name.
+Created via `gh repo create` (Task 012). Fork or rename org in docs if you transfer the repository.
 
 ## Prerequisites
 
@@ -102,10 +102,10 @@ Root `.gitignore` enforces these patterns.
 
 ## TODO (manual)
 
-- [ ] Replace `YOUR_ORG` in remote URL and this doc when org is known
-- [ ] Run `gh repo create` or web UI steps above if remote does not exist
+- [x] Remote created: `https://github.com/pri8771/toybox-blasters` (`main` pushed; `dev` pushed)
 - [ ] Enable branch protection on `main` after CI (Task 013+) is wired
 - [ ] Add CI badge to root `README.md` when workflow exists
+- [ ] Set GitHub default branch to `main` if not already (Settings → General)
 
 ## Related docs
 
