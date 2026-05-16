@@ -108,16 +108,6 @@
 
 **Why:** Avoid ad fatigue before core toy-room hook is proven (competitive weakness #8).
 
-## TD-019 — GitHub repository & branching (Task 012)
-
-**Decision:** Use `main` as protected release branch, `dev` for integration, `feature/*` and `hotfix/*` for short-lived work. Document remote setup in `PROJECT_DOCS/GITHUB_SETUP.md`; issue/PR templates under `.github/`. Semver tags per `RELEASE_TAGS.md` (`v0.1.0-mvp`, `v0.2.0-softlaunch`, `v1.0.0`).
-
-**Why:** Phase 2 needs reproducible collaboration, PR review, and milestone tagging before CI and gameplay vertical slice land.
-
-**Rules:** Never force-push `main`; never commit `Library/`, `UserSettings/`, or Firebase secret files (enforced in root `.gitignore`).
-
-**Validation:** **ToyBox Blasters → Project → Validate GitHub Setup** checks `.gitignore` and template files.
-
 ## TD-018 — Core gameplay loop storage (Task 005)
 
 **Decision:** Ten loop layers live in `PROJECT_DOCS/CORE_GAMEPLAY_LOOP.md` (mermaid + review table) and `CoreGameplayLoopConfig` / `CoreGameplayLoopDefaults`. Fail rule: **squad wipe**; **50%** partial coins on fail; optional level timer deferred post-MVP.
@@ -125,6 +115,17 @@
 **Why:** Single validated stack before Phase 2 vertical slice; `CoreGameplayLoopValidator` requires all `GameplayLoopType` enum values exactly once.
 
 **MVP vs later:** Ad, cosmetic, and LiveOps use `LoopImplementationPhase.DesignedOnly` until soft launch / production per `RELEASE_SCOPE.md`.
+
+## TD-019 — Master documentation manifest (Task 010)
+
+**Decision:** Single index at `PROJECT_DOCS/README.md`; optional paths and required flags in `DocumentationManifestConfig` + `DocumentationManifestDefaults`. Editor validates file existence under Unity project root (`Assets/../`). Stub creator for missing optional/required files.
+
+**Why:** Tasks 001–009 produced scattered markdown; Phase 2 agents need one registry, CI-friendly disk checks, and link-based consolidation (no duplicated PRD bodies).
+
+**Validation:** **ToyBox Blasters → Documentation → Validate Documentation System**. Economy canonical doc renamed to `ECONOMY_DESIGN.md` with `ECONOMY_PHILOSOPHY.md` alias for code naming continuity.
+
+**Alternatives considered:**
+- Docs-only index without ScriptableObject — rejected; matches Task 001–005 config + validator pattern.
 
 ## TD-020 — Art direction storage (Task 008)
 
@@ -135,3 +136,13 @@
 **Validation:** `ArtDirectionValidator` — summaries, head-height 2.5–3, ≥16 palette rows, all enum ids, `PFB_` prefix.
 
 **Asmdef:** `ToyBoxBlasters.Scripts` references `ToyBoxBlasters.Runtime` for `PlaceholderArtId` in requirement rows.
+
+## TD-021 — GitHub repository & branching (Task 012)
+
+**Decision:** Use `main` as protected release branch, `dev` for integration, `feature/*` and `hotfix/*` for short-lived work. Document remote setup in `PROJECT_DOCS/GITHUB_SETUP.md`; issue/PR templates under `.github/`. Semver tags per `RELEASE_TAGS.md` (`v0.1.0-mvp`, `v0.2.0-softlaunch`, `v1.0.0`). Remote: `https://github.com/pri8771/toybox-blasters`.
+
+**Why:** Phase 2 needs reproducible collaboration, PR review, and milestone tagging before CI and gameplay vertical slice land.
+
+**Rules:** Never force-push `main`; never commit `Library/`, `UserSettings/`, or Firebase secret files (enforced in root `.gitignore`).
+
+**Validation:** **ToyBox Blasters → Project → Validate GitHub Setup** checks `.gitignore` and template files.

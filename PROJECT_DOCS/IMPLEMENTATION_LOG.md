@@ -78,7 +78,7 @@
 - `.github/` — issue templates (bug, feature), `config.yml`, PR template, `.github/README.md`.
 - `CONTRIBUTING.md` — contributor quick start.
 - `GitHubSetupValidationEditor` — **ToyBox Blasters → Project → Validate GitHub Setup**.
-- `TECH_DECISIONS.md` TD-019; backlog Task 012 done, Task 013 next.
+- `TECH_DECISIONS.md` TD-021; backlog Task 012 done, Task 013 next.
 
 **How to test:**
 1. **ToyBox Blasters → Project → Validate GitHub Setup** — expect all PASS.
